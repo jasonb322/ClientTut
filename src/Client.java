@@ -13,7 +13,7 @@ public class Client {
         // improve efficiency with buffer
         InputStreamReader inputStreamReader = null;
         OutputStreamWriter  outputStreamWriter = null;
-        BufferedReader bufferReaderClass = null;
+        BufferedReader bufferedReader = null;
         BufferedWriter bufferedWriter = null;
 
         try {
