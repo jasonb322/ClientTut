@@ -27,7 +27,7 @@ public class Client {
             bufferedReader = new BufferedReader(inputStreamReader);
             bufferedWriter = new BufferedWriter(outputStreamWriter);
 
-            Scannner scannner = new Scanner(System.in);
+            Scanner scannner = new Scanner(System.in);
 
             while (true)
             {
