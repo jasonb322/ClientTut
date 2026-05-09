@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -16,11 +17,9 @@ public class Client {
         BufferedReader bufferedReader = null;
         BufferedWriter bufferedWriter = null;
 
-        try {
-            // communication line
+        try{
             socket = new Socket("localhost", 1234);
 
-            // bridge to characters
             inputStreamReader = new InputStreamReader(socket.getInputStream());
             outputStreamWriter = new OutputStreamWriter(socket.getOutputStream());
 
@@ -29,16 +28,18 @@ public class Client {
 
             Scanner scanner = new Scanner(System.in);
 
-            while (true)
+            while(true)
             {
-                String msgToSend = scanner.nextLine();
-                bufferedWriter.write(msgToSend);
-                bufferedWriter.newLine();
-                bufferedWriter.flush();
+               String msgToSend = scanner.nextLine();
 
-                System.out.println("Server: " + bufferedReader.readLine();
+               bufferedWriter.write(msgToSend);
+               bufferedWriter.newLine();
+               bufferedWriter.flush();
 
-                if(msgToSend.equalsIgnoreCase("bye")) break;
+
+               System.out.println("Server: " + bufferedReader.readLine());
+               if(msgToSend.equalsIgnoreCase("bye"))
+                   break;
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -55,11 +56,11 @@ public class Client {
                 if(bufferedWriter != null)
                     bufferedWriter.close();
 
-            }catch (IOException e) {
+
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
 
-        
     }
 }
