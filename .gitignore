@@ -6,6 +6,7 @@ out/
 *.class
 
 
+
 # IntelliJ metadata
 .idea/
 *.iml
